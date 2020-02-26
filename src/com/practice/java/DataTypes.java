@@ -6,7 +6,6 @@
 *
 ******************************************************************************/
 
-
 /******************************************************************************
 *
 *   Input Format :
@@ -29,32 +28,48 @@ import java.util.Scanner;
 public class DataTypes {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner scanner = new Scanner(System.in);
 		
+		Scanner scanner = new Scanner(System.in);
+
 		System.out.println("Enter number of test cases");
 		int testCases = scanner.nextInt();
 		int i;
 		long number;
-		
-		for( i=0; i<testCases; i++ ) {
-			System.out.println("Enter a number to check in which data type it can fit");			
+
+		for (i = 0; i < testCases; i++) {
+
 			try {
 				number = scanner.nextLong();
-				if( number>=-(long)Math.pow(2, 7) && number<=((long)Math.pow(2, 7)-1) ) System.out.println("* byte");
+				System.out.println(number + " can be fitted in:");
+				
+//				if( number>=-(long)Math.pow(2, 7) && number<=((long)Math.pow(2, 7)-1) ) System.out.println("* byte");
 //				System.out.println(-(long)Math.pow(2, 7)+" = "+((long)Math.pow(2, 7)-1));
-				if( number>=-(long)Math.pow(2, 15) && number<=((long)Math.pow(2, 15)-1) ) System.out.println("* short");
+//				if( number>=-(long)Math.pow(2, 15) && number<=((long)Math.pow(2, 15)-1) ) System.out.println("* short");
 //				System.out.println(-(long)Math.pow(2, 15)+"  = "+((long)Math.pow(2, 15)-1));
-				if( number>=-(long)Math.pow(2, 31) && number<=((long)Math.pow(2, 31)-1) ) System.out.println("* int");
+//				if( number>=-(long)Math.pow(2, 31) && number<=((long)Math.pow(2, 31)-1) ) System.out.println("* int");
 //				System.out.println(-(long)Math.pow(2, 31)+"  = "+((long)Math.pow(2, 31)-1));
-				if( number>=-(long)Math.pow(2, 63) && number<=((long)Math.pow(2, 63)-1) ) System.out.println("* long");
-//				System.out.println(-((long)Math.pow(2, 63)+1)+"  = "+(long)Math.pow(2, 63));
+//				if( number>=-(long)Math.pow(2, 63)-1 && number<=((long)Math.pow(2, 63)) ) System.out.println("* long");
+//				System.out.println(-(long)Math.pow(2, 63)-1+"  = "+((long)Math.pow(2, 63)));
+
+				if (number >= Byte.MIN_VALUE && number <= Byte.MAX_VALUE)
+					System.out.println("* byte");
+				if (number >= Short.MIN_VALUE && number <= Short.MAX_VALUE)
+					System.out.println("* short");
+				if (number >= Integer.MIN_VALUE && number <= Integer.MAX_VALUE)
+					System.out.println("* int");
+				if (number >= Long.MIN_VALUE && number <= Long.MAX_VALUE)
+					System.out.println("* long");
+
+				// System.out.println("Byte "+Byte.MIN_VALUE +" "+ Byte.MAX_VALUE);
+				// System.out.println("Short "+Short.MIN_VALUE +" "+ Short.MAX_VALUE);
+				// System.out.println("Integer "+Integer.MIN_VALUE +" "+ Integer.MAX_VALUE);
+				// System.out.println("Long "+Long.MIN_VALUE +" "+ Long.MAX_VALUE);
+
 			} catch (Exception e) {
-				System.out.println("Can't be fitted anywhere");
-				break;
+				System.out.println(scanner.next() + " can't be fitted anywhere.");
 			}
 		}
-		
+
 		scanner.close();
 	}
 
