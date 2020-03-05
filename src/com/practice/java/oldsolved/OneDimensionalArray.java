@@ -20,7 +20,7 @@
 *   
 ******************************************************************************/
 
-package com.practice.java;
+package com.practice.java.oldsolved;
 
 import java.util.Scanner;
 

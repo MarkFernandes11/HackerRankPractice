@@ -22,7 +22,7 @@
 *
 ******************************************************************************/
 
-package com.practice.java;
+package com.practice.java.oldsolved;
 
 public class WelcomeToJava {
 
