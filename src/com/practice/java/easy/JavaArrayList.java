@@ -35,10 +35,11 @@
 
 package com.practice.java.easy;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ArrayList {
+public class JavaArrayList {
 
 	public static void main(String[] args) {
 
@@ -47,12 +48,12 @@ public class ArrayList {
 		System.out.println("Enter n");
 		int n = scanner.nextInt();
 		
-		List<List<Integer>> listOfLists = new java.util.ArrayList<List<Integer>>();
+		List<List<Integer>> listOfLists = new ArrayList<List<Integer>>();
 
 		while(n-- > 0) {
 			System.out.println("Enter d");
 			int d = scanner.nextInt();
-			List<Integer> list = new java.util.ArrayList<Integer>();
+			List<Integer> list = new ArrayList<Integer>();
 			
 			for (int i = 0; i < d; i++) {
 				list.add(scanner.nextInt());
@@ -62,7 +63,7 @@ public class ArrayList {
 
 		System.out.println("List of lists size "+listOfLists.size());
 		
-		List<String> resultList = new java.util.ArrayList<String>();
+		List<String> resultList = new ArrayList<String>();
 		
 		System.out.println("Enter number of queries");
 		int queries = scanner.nextInt();
