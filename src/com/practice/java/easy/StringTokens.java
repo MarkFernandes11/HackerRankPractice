@@ -31,19 +31,16 @@
 
 package com.practice.java.easy;
 
-import java.util.Scanner;
+import com.practice.java.util.Utility;
 
 public class StringTokens {
 
 	public static void main(String[] args) {
 		
-		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter a string ");
-		String string = scanner.nextLine();
+		String string = Utility.getLine();
 		
-		string = string.replace('!', ' ').replace('?', ' ').replace(',', ' ')
-		.replace('\'', ' ').replace('.', ' ').replace('_', ' ').replace('@', ' ')
-		.replace("\\n", " ").replace("\\t", " ").trim();
+		string = specialCharactersRemovedString(string);
 		
 		if(string.length() != 0) {
 			String[] stringArray = string.split("\\s+");
@@ -56,7 +53,14 @@ public class StringTokens {
 			System.out.println(string.length());
 		}
 	
-		scanner.close();
+	}
+	
+	private static String specialCharactersRemovedString(String string) {
+		string = string.replace('!', ' ').replace('?', ' ').replace(',', ' ')
+				.replace('\'', ' ').replace('.', ' ').replace('_', ' ').replace('@', ' ')
+				.replace("\\n", " ").replace("\\t", " ").trim();
+		
+		return string;
 	}
 
 }

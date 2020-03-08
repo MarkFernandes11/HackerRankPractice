@@ -27,13 +27,12 @@
 
 package com.practice.java.easy;
 
-import java.util.Scanner;
+import com.practice.java.util.Utility;
 
 public class Java2DArray {
 
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
 		int i,j;
 		int sum = Integer.MIN_VALUE;
 		int max = Integer.MIN_VALUE;
@@ -41,8 +40,8 @@ public class Java2DArray {
 		int[][] array = new int[6][6];
 
         for (i = 0; i < 6; i++) {
-            String[] arrRowItems = scanner.nextLine().split(" ");
-            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+            String[] arrRowItems = Utility.getLine().split(" ");
+//            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
             
             System.out.println("Enter element in "+i+" row");
             for (j = 0; j < 6; j++) {
@@ -68,7 +67,6 @@ public class Java2DArray {
         System.out.println("Max is "+max);
 //        System.out.println(max);
         
-        scanner.close();
 	}
 
 }

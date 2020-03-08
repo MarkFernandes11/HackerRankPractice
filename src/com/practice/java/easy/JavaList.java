@@ -37,55 +37,60 @@ package com.practice.java.easy;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
+import com.practice.java.util.Utility;
 
 public class JavaList {
 
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
-		
 		System.out.println("Enter initial size of list");
-		int listSize = scanner.nextInt();
+		int listSize = Utility.getInteger();
 		
 		List<Integer> list = new ArrayList<Integer>();
 		int i, index, value;
 		String query;
 		
+		System.out.println("Enter "+ listSize +" elements in list");
 		for (i = 0; i < listSize; i++) {
-			list.add(scanner.nextInt());
+			list.add(Utility.getInteger());
 		}
 		
 		System.out.println("Enter number of queries");
-		int queries = scanner.nextInt();
+		int queries = Utility.getInteger();
 		
 		for (i = 0; i < queries; i++) {
 			System.out.println("Enter query");
-			query = scanner.next();
-			scanner.nextLine();
+			query = Utility.getWord();
 			
 			if(query.equalsIgnoreCase("insert")) {
 				System.out.println("Enter index");
-				index = scanner.nextInt();
-				
-				System.out.println("Enter value");
-				value = scanner.nextInt();
-				
-				list.add(index, value);
-				
+				try {
+					index = Utility.getInteger();
+					
+					System.out.println("Enter value");
+					value = Utility.getInteger();
+					
+					list.add(index, value);
+				} catch (Exception e) {
+					System.out.println("You have entered index which is out of bounds");
+				}
 			} else if (query.equalsIgnoreCase("delete")) {
 				System.out.println("Enter index");
-				index = scanner.nextInt();
-				
-				list.remove(index);
+				try {
+					index = Utility.getInteger();
+					
+					list.remove(index);
+				} catch (Exception e) {
+					System.out.println("You have entered index which is out of bounds");
+				}
 			}
 		}
 		
 		for (i = 0; i < list.size(); i++) {
 			System.out.print(list.get(i)+" ");
 		}
-		
-		scanner.close();
+
 	}
 
 }

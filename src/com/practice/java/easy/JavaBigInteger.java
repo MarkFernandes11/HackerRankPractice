@@ -27,28 +27,25 @@
 package com.practice.java.easy;
 
 import java.math.BigInteger;
-import java.util.Scanner;
+
+import com.practice.java.util.Utility;
 
 public class JavaBigInteger {
 
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
-
 		System.out.println("Enter number 1");
-		BigInteger number1 = scanner.nextBigInteger();
+		BigInteger number1 = Utility.getBigInteger();
 
 		System.out.println("Enter number 2");
-		BigInteger number2 = scanner.nextBigInteger();
+		BigInteger number2 = Utility.getBigInteger();
 
 		BigInteger sum = number1.add(number2);
 		BigInteger prod = number1.multiply(number2);
 
 		System.out.println(sum);
 		System.out.println(prod);
-
-		scanner.close();
-
+	
 	}
 
 }

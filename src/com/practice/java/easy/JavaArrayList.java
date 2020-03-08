@@ -37,26 +37,25 @@ package com.practice.java.easy;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
+import com.practice.java.util.Utility;
 
 public class JavaArrayList {
 
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
-
 		System.out.println("Enter n");
-		int n = scanner.nextInt();
+		int n = Utility.getInteger();
 		
 		List<List<Integer>> listOfLists = new ArrayList<List<Integer>>();
 
 		while(n-- > 0) {
 			System.out.println("Enter d");
-			int d = scanner.nextInt();
+			int d = Utility.getInteger();
 			List<Integer> list = new ArrayList<Integer>();
 			
 			for (int i = 0; i < d; i++) {
-				list.add(scanner.nextInt());
+				list.add(Utility.getInteger());
 			}
 			listOfLists.add(list);
 		}
@@ -66,14 +65,14 @@ public class JavaArrayList {
 		List<String> resultList = new ArrayList<String>();
 		
 		System.out.println("Enter number of queries");
-		int queries = scanner.nextInt();
+		int queries = Utility.getInteger();
 		
 		while(queries-- > 0) {
 			System.out.println("Enter line number");
-			int line = scanner.nextInt();
+			int line = Utility.getInteger();
 			
 			System.out.println("Enter position");
-			int position = scanner.nextInt();
+			int position = Utility.getInteger();
 			
 			if(listOfLists.size() >= line) {
 				try {
@@ -93,7 +92,6 @@ public class JavaArrayList {
 			System.out.println(s);
 		}
 		
-		scanner.close();
 	}
 
 }

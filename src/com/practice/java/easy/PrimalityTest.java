@@ -27,16 +27,15 @@
 package com.practice.java.easy;
 
 import java.math.BigInteger;
-import java.util.Scanner;
+
+import com.practice.java.util.Utility;
 
 public class PrimalityTest {
 
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
-		
 		System.out.println("Enter a number to check if it is prime or not");
-		String s = scanner.nextLine();
+		String s = Utility.getLine();
 		
 		BigInteger bigInteger = new BigInteger(s);
 
@@ -45,8 +44,6 @@ public class PrimalityTest {
 		} else { 
 			System.out.println("not prime");
 		}
-
-		scanner.close();
 		
 	}
 
