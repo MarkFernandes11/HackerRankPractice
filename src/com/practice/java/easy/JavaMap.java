@@ -61,9 +61,9 @@ public class JavaMap {
 			
 			scanner.nextLine();
 		}
+		System.out.println("Enter name to be searched");
 		while(scanner.hasNext())
-		{
-			System.out.println("Enter name to be searched");
+		{		
 			String s=scanner.nextLine();
 			
 			if(map.containsKey(s)) {
@@ -71,7 +71,7 @@ public class JavaMap {
 			} else {
 				System.out.println("Not found");
 			}
-			
+			System.out.println("Enter name to be searched");
 		}
 		
 		scanner.close();

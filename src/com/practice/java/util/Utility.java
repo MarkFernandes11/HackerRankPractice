@@ -62,4 +62,8 @@ public class Utility {
 		return value;
 	}	
 	
+	public static Boolean hasNext() {
+		Boolean value = scanner.hasNext();
+		return value;
+	}
 }

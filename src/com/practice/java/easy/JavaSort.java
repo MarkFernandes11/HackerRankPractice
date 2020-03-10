@@ -76,7 +76,7 @@ public class JavaSort {
 //		Collections.sort(students, (c1, c2) -> c1.getCgpa()>c2.getCgpa());
 		
 		
-		for(int i=cgpas.size()-1; i>0; i--) {		
+		for(int i=cgpas.size()-1; i>=0; i--) {		
 			for(Student student : students) {
 				if(cgpas.get(i).equals(student.getCgpa())) {
 					System.out.println(student.getName());
