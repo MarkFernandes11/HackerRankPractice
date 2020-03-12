@@ -54,45 +54,46 @@ public class JavaBitSet {
 		// TODO Auto-generated method stub
 		System.out.println("Enter length of BitSet");
 		int length = Utility.getInteger();
-		
+
 		int[] b1 = new int[length];
 		int[] b2 = new int[length];
-		
+
 		System.out.println("Enter number of BitSet operations");
 		int operations = Utility.getInteger();
-		
-		while(operations-- > 0) {
+
+		while (operations-- > 0) {
 			System.out.println("Enter operation to perform");
 			String operation = Utility.getWord();
-			
+
 			System.out.println("Enter value1");
 			int value1 = Utility.getInteger();
-			
+
 			System.out.println("Enter value2");
 			int value2 = Utility.getInteger();
-			
+
 			bitsOperation(operation, value1, value2, b1, b2);
 		}
 	}
-	
+
 	private static void bitsOperation(String operation, int value1, int value2, int[] b1, int[] b2) {
+//		BitSet bitSet = new BitSet(b1.length);
 		switch (operation.toLowerCase()) {
 		case "and":
 			add(b1, b2, value1, value2);
 			break;
-			
+
 		case "or":
 			or(b1, b2, value1, value2);
 			break;
-			
+
 		case "xor":
 			xor(b1, b2, value1, value2);
 			break;
-			
+
 		case "flip":
 			flip(b1, b2, value1, value2);
 			break;
-			
+
 		case "set":
 			set(b1, b2, value1, value2);
 			break;
@@ -101,92 +102,91 @@ public class JavaBitSet {
 			break;
 		}
 	}
-	
+
 	private static void add(int[] b1, int[] b2, int value1, int value2) {
-		
-		if(value1 == 1) {
-			for(int i = 0; i < b1.length; i++) {
+
+		if (value1 == 1) {
+			for (int i = 0; i < b1.length; i++) {
 				b1[i] = (b1[i] == 1 && b2[i] == 1) ? 1 : 0;
 			}
 		} else {
-			for(int i = 0; i < b1.length; i++) {
+			for (int i = 0; i < b1.length; i++) {
 				b2[i] = (b1[i] == 1 && b2[i] == 1) ? 1 : 0;
 			}
 		}
-		
+
 		bitsCountValue(b1, b2);
 	}
-	
+
 	private static void or(int[] b1, int[] b2, int value1, int value2) {
-		
-		if(value1 == 1) {
-			for(int i = 0; i < b1.length; i++) {
+
+		if (value1 == 1) {
+			for (int i = 0; i < b1.length; i++) {
 				b1[i] = (b1[i] == 1 || b2[i] == 1) ? 1 : 0;
 			}
 		} else {
-			for(int i = 0; i < b1.length; i++) {
+			for (int i = 0; i < b1.length; i++) {
 				b2[i] = (b1[i] == 1 || b2[i] == 1) ? 1 : 0;
 			}
 		}
-		
+
 		bitsCountValue(b1, b2);
 	}
-	
+
 	private static void xor(int[] b1, int[] b2, int value1, int value2) {
-		
-		if(value1 == 1) {
-			for(int i = 0; i < b1.length; i++) {
-				b1[i] = b1[i] == b2[i]  ? 0 : 1;
+
+		if (value1 == 1) {
+			for (int i = 0; i < b1.length; i++) {
+				b1[i] = b1[i] == b2[i] ? 0 : 1;
 			}
 		} else {
-			for(int i = 0; i < b1.length; i++) {
-				b2[i] = b1[i] == b2[i]  ? 0 : 1;
+			for (int i = 0; i < b1.length; i++) {
+				b2[i] = b1[i] == b2[i] ? 0 : 1;
 			}
 		}
-		
+
 		bitsCountValue(b1, b2);
 	}
-	
+
 	private static void set(int[] b1, int[] b2, int value1, int value2) {
-		
-		if(value1 == 1 && value2 < b1.length) {
-			b1[value2] = 1 ;
+
+		if (value1 == 1 && value2 < b1.length) {
+			b1[value2] = 1;
 			bitsCountValue(b1, b2);
-		} else if(value1 == 2 && value2 < b1.length) {
-			b2[value2] = 1 ;
+		} else if (value1 == 2 && value2 < b1.length) {
+			b2[value2] = 1;
 			bitsCountValue(b1, b2);
 		} else {
 			bitsCountValue(b1, b2);
 		}
 	}
-	
+
 	private static void flip(int[] b1, int[] b2, int value1, int value2) {
-		
-		if(value1 == 1 && value2 < b1.length) {
+
+		if (value1 == 1 && value2 < b1.length) {
 			b1[value2] = (b1[value2] == 1) ? 0 : 1;
 			bitsCountValue(b1, b2);
-		} else if(value1 == 2 && value2 < b1.length) {
+		} else if (value1 == 2 && value2 < b1.length) {
 			b2[value2] = (b2[value2] == 1) ? 0 : 1;
 			bitsCountValue(b1, b2);
 		} else {
 			bitsCountValue(b1, b2);
 		}
 	}
-	
+
 	private static void bitsCountValue(int[] b1, int[] b2) {
 		int b1Count = 0;
 		int b2Count = 0;
-		
+
 		for (int i : b1) {
-			b1Count += ( i == 1 ) ? 1 : 0;
+			b1Count += (i == 1) ? 1 : 0;
 		}
 
 		for (int i : b2) {
-			b2Count += ( i == 1 ) ? 1 : 0;
+			b2Count += (i == 1) ? 1 : 0;
 		}
-		
+
 		System.out.println(b1Count + " " + b2Count);
 	}
 
 }
-
