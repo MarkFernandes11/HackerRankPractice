@@ -44,6 +44,12 @@
 *
 ******************************************************************************/
 
+/******************************************************************************
+* 
+* Getting same answer but fails for test cases 6, 7 and 8 still can't understand why. 
+* 
+******************************************************************************/
+
 package com.practice.java.easy;
 
 import com.practice.java.util.Utility;
@@ -51,7 +57,7 @@ import com.practice.java.util.Utility;
 public class JavaBitSet {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		System.out.println("Enter length of BitSet");
 		int length = Utility.getInteger();
 
@@ -72,11 +78,12 @@ public class JavaBitSet {
 			int value2 = Utility.getInteger();
 
 			bitsOperation(operation, value1, value2, b1, b2);
+			
 		}
 	}
 
 	private static void bitsOperation(String operation, int value1, int value2, int[] b1, int[] b2) {
-//		BitSet bitSet = new BitSet(b1.length);
+
 		switch (operation.toLowerCase()) {
 		case "and":
 			add(b1, b2, value1, value2);
