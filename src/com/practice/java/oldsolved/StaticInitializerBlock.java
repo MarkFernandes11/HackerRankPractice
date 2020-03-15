@@ -29,29 +29,29 @@
 
 package com.practice.java.oldsolved;
 
-import java.util.Scanner;
+import com.practice.java.util.Utility;
 
 public class StaticInitializerBlock {
 	
-	static Scanner scanner = new Scanner(System.in);
-	static int breath;
+	static int breadth;
 	static int height;
 	static boolean flag;
 	
 	static {
-		breath = scanner.nextInt(); 
-		height = scanner.nextInt();
-		flag = (breath>0 && height>0) ? true : false; 
+		System.out.println("Enter breadth");
+		breadth = Utility.getInteger(); 
+		System.out.println("Enter heigth");
+		height = Utility.getInteger();
+		flag = (breadth>0 && height>0) ? true : false; 
 	}
 	
 	public static void main(String[] args) {
 		if(flag) {
-			System.out.println(breath*height);
+			System.out.println(breadth*height);
 		} else {
 			System.out.println("java.lang.Exception: Breadth and height must be positive");
 		}
 		
-		scanner.close();
 	}
 
 }

@@ -22,21 +22,20 @@
 
 package com.practice.java.oldsolved;
 
-import java.util.Scanner;
+import com.practice.java.util.Utility;
 
 public class OneDimensionalArray {
 
 	public static void main(String[] args) {
 		
-		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter size of an array");
-        int n = scanner.nextInt();
+        int n = Utility.getInteger();
         int[] a = new int[n];
         
         // Stores each value in array a
         for (int i = 0; i < a.length; i++) {
         	System.out.println("Enter element at index "+i);
-        	a[i] = scanner.nextInt(); 
+        	a[i] = Utility.getInteger(); 
         }
         
         // Prints each sequential element in array a
@@ -44,7 +43,6 @@ public class OneDimensionalArray {
             System.out.println(a[i]);
         }
         
-        scanner.close();
 	}
 
 }

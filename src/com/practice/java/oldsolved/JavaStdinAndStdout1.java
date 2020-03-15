@@ -23,22 +23,20 @@
 
 package com.practice.java.oldsolved;
 
-import java.util.Scanner;
+import com.practice.java.util.Utility;
 
 public class JavaStdinAndStdout1 {
 
 	public static void main(String[] args) {
 		
-		Scanner scanner = new Scanner(System.in);
 		int i;
 		int[] array = new int[3];
 		
 		for(i=0; i<array.length; i++) {
-			array[i] = scanner.nextInt();
+			array[i] = Utility.getInteger();
 			System.out.println(array[i]);
 		}
 
-		scanner.close();
 	}
 
 }

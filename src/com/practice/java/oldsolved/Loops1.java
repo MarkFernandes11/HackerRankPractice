@@ -22,24 +22,16 @@
 
 package com.practice.java.oldsolved;
 
-import java.util.Scanner;
+import com.practice.java.util.Utility;
 
 public class Loops1 {
 
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
-		
 		System.out.println("Enter a number whose first 10 multiples you need to print");
-		int number = scanner.nextInt();
-		int i;
+		int number = Utility.getInteger();
 		
-		for( i=1 ; i<=10 ; i++) {
-			System.out.println(number+" x "+i+" = "+(number*i));
-		}
-		
-		scanner.close();
-		
+		Utility.printMultiplesUpto10(number);		
 	}
 
 }

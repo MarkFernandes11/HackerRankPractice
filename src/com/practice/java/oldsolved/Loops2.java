@@ -30,26 +30,24 @@
 
 package com.practice.java.oldsolved;
 
-import java.util.Scanner;
+import com.practice.java.util.Utility;
 
 public class Loops2 {
 
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
-		
 		System.out.println("Enter number of test cases");
-		int testCases = scanner.nextInt();
+		int testCases = Utility.getInteger();
 		int i, a, b, n, j;
 		long sum = 0;
 		
 		for( i=0; i<testCases; i++ ) {
 			System.out.println("Enter value of a");
-			a = scanner.nextInt();
+			a = Utility.getInteger();
 			System.out.println("Enter value of b");
-			b = scanner.nextInt();
+			b = Utility.getInteger();
 			System.out.println("Enter value of n");
-			n = scanner.nextInt();
+			n = Utility.getInteger();
 
 			for(j=0; j<n; j++) {
 				if(j == 0) {
@@ -64,8 +62,6 @@ public class Loops2 {
 			System.out.println();
 			sum = 0;
 		}
-		
-		scanner.close();
 		
 	}
 

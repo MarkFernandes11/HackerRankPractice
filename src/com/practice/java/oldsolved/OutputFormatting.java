@@ -33,19 +33,18 @@
 
 package com.practice.java.oldsolved;
 
-import java.util.Scanner;
+import com.practice.java.util.Utility;
 
 public class OutputFormatting {
 
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
 		int i;
 		
 		System.out.println("================================");
 		for(i=0; i<3; i++) {
-			String string = scanner.next();
-			int number = scanner.nextInt();
+			String string = Utility.getWord();
+			int number = Utility.getInteger();
 			
 			// %s for string, 15 for total length and '-' to inverse direction of padding 
 			// by default it is left padding with spaces.
@@ -59,7 +58,6 @@ public class OutputFormatting {
 		}
 		System.out.println("================================");
 		
-		scanner.close();
 	}
 
 }

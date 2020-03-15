@@ -29,30 +29,26 @@
 
 package com.practice.java.oldsolved;
 
-import java.util.Scanner;
+import com.practice.java.util.Utility;
 
 public class JavaStdinAndStdout2 {
 
 	public static void main(String[] args) {
 		
-Scanner scanner = new Scanner(System.in);
-        
         System.out.println("Enter a integer ");
-        int realNumber = scanner.nextInt();
+        int realNumber = Utility.getInteger();
 
         System.out.println("Enter a double ");
-        double fractionNumber = scanner.nextDouble();
-
-        scanner.nextLine();
-                
+        double fractionNumber = Utility.getDouble();
+        Utility.getLine();
+        
         System.out.println("Enter a string ");
-        String string = scanner.nextLine();
+        String string = Utility.getLine();
         
         System.out.println("String: "+string);
         System.out.println("Double: "+fractionNumber);
         System.out.println("Int: "+realNumber);
         
-        scanner.close();
 	}
 
 }

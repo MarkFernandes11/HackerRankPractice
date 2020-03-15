@@ -30,15 +30,13 @@
 
 package com.practice.java.oldsolved;
 
-import java.util.Scanner;
+import com.practice.java.util.Utility;
 
 public class IfElse {
 
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
-
-		int n = scanner.nextInt();
+		int n = Utility.getInteger();
 		
 		if(n%2 == 1) {
 			System.out.println("Weird");
@@ -50,7 +48,6 @@ public class IfElse {
 			System.out.println("Not Weird");
 		}	
 		
-		scanner.close();
 	}
 
 }

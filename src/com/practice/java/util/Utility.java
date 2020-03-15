@@ -53,7 +53,7 @@ public class Utility {
 	}
 	
 	public static String getLine() {
-		String line = scanner.next();
+		String line = scanner.nextLine();
 		return line;
 	}
 
@@ -65,5 +65,25 @@ public class Utility {
 	public static Boolean hasNext() {
 		Boolean value = scanner.hasNext();
 		return value;
+	}
+	
+	public static String getReverseString(String string) {
+
+		String reverseString = "";
+		
+		if(string.length() != 0) {
+			for(int i=(string.length()-1); i>=0; i--) {
+				reverseString += string.charAt(i);
+			}
+		}
+				
+		return reverseString;
+	}
+	
+	public static void printMultiplesUpto10(int number) {
+		int i;
+		for( i=1 ; i<=10 ; i++) {
+			System.out.println(number+" x "+i+" = "+(number*i));
+		}
 	}
 }
